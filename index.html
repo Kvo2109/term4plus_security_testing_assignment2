@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Win a Trip to Japan - Survey</title>
+</head>
+<body>
+    <!-- Introduction -->
+    <h1><i class="fa-solid fa-torii-gate"></i> Enter for a Chance to Win a Trip to Japan <i class="fa-solid fa-torii-gate"></i></h1>
+    <p>Complete all the questions to stand a chance of winning an exclusive trip to Japan!</p>
+
+    <!-- Main survey section -->
+    <form id="prize-survey" action="httpbin.org/post" method="post">
+        <!-- Basic info section -->
+        <fieldset>
+            <legend>Personal Information</legend>
+    
+            <label for="name">Your name:</label>
+            <input type="text" id="name" name="user-name"
+                    pattern="[a-zA-Z0-9]{5,12}" 
+                    title="Username must be 5-12 characters long and contain only letters and numbers." 
+                    aria-label="Enter your name" 
+                    placeholder="Enter your username"> 
+            <br>
+            <div id="name-error"><!-- Error message will be injected here --></div>
+
+            <label for="email">Your email:</label>
+            <input type="email" id="email" name="user-email" 
+                    aria-label="Enter your email" 
+                    placeholder="Enter your email">
+            <br>
+            <div id="email-error"><!-- Error message will be injected here --></div>
+
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" name="phone" 
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    title="Telephone number must follow the series of 3 numbers."
+                    aria-label="Enter your phone number" 
+                    placeholder="Format: xxx-xxx-xxxx">
+            <br>
+            <div id="tel-error"><!-- Error message will be injected here --></div>
+        </fieldset>
+        
+        <!-- Quiz Section -->
+        <fieldset>
+            <legend>Quiz section</legend>
+
+            <!-- General info about Japan -->
+            <fieldset>
+                <legend>1/ Which location is currently the capital of Japan?</legend>
+            
+                <input type="radio" id="tokyo" name="capital" value="tokyo" aria-label="Tokyo">
+                <label for="tokyo">Tokyo</label><br>
+    
+                <input type="radio" id="osaka" name="capital" value="osaka" aria-label="Osaka">
+                <label for="osaka">Osaka</label><br>
+    
+                <input type="radio" id="kyoto" name="capital" value="kyoto" aria-label="Kyoto">
+                <label for="kyoto">Kyoto</label><br>
+    
+                <input type="radio" id="nagoya" name="capital" value="Yokohama" aria-label="Yokohama">
+                <label for="nagoya">Yokohama</label><br>
+            </fieldset>
+            <div id="choice-error"><!-- Error message will be injected here --></div>
+
+
+            <!-- Deeper knowledge about history -->
+            <fieldset>
+                <legend>2/ In Japanese culture, which of these weapons consider historical weapons</legend>
+
+                <input type="checkbox" id="katana" value="katana" name="weapon" aria-label="Katana">
+                <label for="katana">Katana</label><br>
+
+                <input type="checkbox" id="bow" value="bow" name="weapon" aria-label="Bow">
+                <label for="bow">Bow</label><br>
+
+                <input type="checkbox" id="slingshot" value="slingshot" name="weapon" aria-label="Sling shot">
+                <label for="slingshot">Sling shot</label><br>
+
+                <input type="checkbox" id="spear" value="spear" name="weapon" aria-label="Spear">
+                <label for="spear">Spear</label><br>
+            </fieldset>
+            <div id="checkbox-error"><!-- Error message will be injected here --></div>
+
+            <!-- Personal opinion -->
+            <fieldset>
+                <legend>3/ In your opinion, which place have the best "Wagyu" in Japan?</legend>
+                <label for="city">Consider your choice:</label>
+                <select id="city" name="city" aria-label="Select a place where you think Wagyu is best">
+                    <option value="default">Make a choice</option>
+                    <option value="okayama">Okayama</option>
+                    <option value="hokkaido">Hokkaido</option>
+                    <option value="aomori">Aomori</option>
+                    <option value="kobe">Kobe</option>
+                </select>
+                <br>
+            </fieldset>
+            <div id="select-error"><!-- Error message will be injected here --></div>
+
+            <!-- File Upload -->
+            <fieldset>
+                <legend>4/ Tell us why you deserve this trip:</legend>
+                <label for="file">Write a short essay(200 - 500 words) to describe your favorite place that you want to visit first in Japan, you can submit in .doc or .pdf format</label>
+                <input type="file" id="file" name="userfile" aria-label="Upload your essay file in .doc or .pdf format">
+            </fieldset>
+            <div id="upload-error"><!-- Error message will be injected here --></div>
+        </fieldset>
+
+        <!-- Submission -->
+        <input type="submit" value="Submit" aria-label="Click this to submit your form.">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -31,7 +31,7 @@ interface AllocatedAsset {
  * console.log(allocateAssetPercentage(holdingAssets));
  */
 export function allocateAssetPercentage(
-  arrayOfAssets: HoldingAsset[]
+  arrayOfAssets: HoldingAsset[],
 ): AllocatedAsset[] | string {
   // Empty array handler
   if (arrayOfAssets.length === 0) {
